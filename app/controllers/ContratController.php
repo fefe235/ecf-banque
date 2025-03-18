@@ -24,4 +24,24 @@ class ContratController
         $this->contrat->createContrat($type_contrat, $montant, $duree , $id_client);
         header('Location: /ecf-banque/');
     }
+    public function viewFromContrat($id) 
+    {
+        $contrat = $this->contrat->getContrat($id);
+        require_once __DIR__ . '/../views/view-contrat.php';
+    }
+    public function modifyFromContrat($id) 
+    {
+        $contrat = $this->contrat->getContrat($id);
+        require_once __DIR__ . '/../views/modify-contrat.php';
+    }
+    public function deleteFromContrat($id) 
+    {
+        $this->contrat->deleteContrat($id);
+        header('Location: /ecf-banque/');
+    }
+    public function updateFromContrat($id, string $type, $montant, $duree, $id_client) 
+    {
+        $this->contrat->updateContrat($id, $type, $montant, $duree,$id_client);
+        header('Location: /ecf-banque/');
+    }
 }

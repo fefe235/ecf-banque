@@ -4,7 +4,7 @@
     <h2>Détails du compte</h2>
     <p><strong>id :</strong> <?= htmlspecialchars($compte['id_compte']) ?></p>
     <p><strong>RIB :</strong> <?= htmlspecialchars($compte['RIB']) ?></p>
-    <p><strong>type de compte :</strong> <?= htmlspecialchars($compte['type']) ?></p>
+    <p><strong>type de compte :</strong> <?= htmlspecialchars($compte['type_compte']) ?></p>
     <p><strong>solde :</strong> <?= htmlspecialchars($compte['solde']) ?></p>
     <p><strong>client:</strong> <?= htmlspecialchars($compte['id_client']) ?></p>
 

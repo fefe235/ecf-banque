@@ -17,6 +17,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'createClient' && isset($_POST[
 }else if (isset($_GET['action']) && $_GET['action'] == 'updateCompte' && isset($_POST['RIB']) && !empty($_POST['RIB']) && isset($_POST['type']) && !empty($_POST['type']) && isset($_POST['solde']) && !empty($_POST['solde'])&& isset($_POST['id_client']) && !empty($_POST['id_client']) && isset($_POST['id'])&& !empty($_POST['id'])) {
     $compteController->updateFromCompte($_POST['id'],$_POST['RIB'], $_POST['type'], $_POST['solde'],$_POST['id_client']);
 
+}else if (isset($_GET['action']) && $_GET['action'] == 'updateContrat' && isset($_POST['type']) && !empty($_POST['type']) && isset($_POST['montant']) && !empty($_POST['montant']) && isset($_POST['duree']) && !empty($_POST['duree'])&& isset($_POST['id_client']) && !empty($_POST['id_client']) && isset($_POST['id'])&& !empty($_POST['id'])) {
+    $contratController->updateFromContrat($_POST['id'],$_POST['type'], $_POST['montant'], $_POST['duree'],$_POST['id_client']);
+
 }else if (isset($_GET['action']) && $_GET['action'] == 'createCompte' && isset($_POST['RIB']) && !empty($_POST['RIB']) && isset($_POST['type']) && !empty($_POST['type']) && isset($_POST['solde'])&& !empty($_POST['solde'])&& isset($_POST['id_client'])&& !empty($_POST['id_client']) ) {
     $compteController->createCompte($_POST['RIB'], $_POST['type'], $_POST['solde'],$_POST['id_client']);
 
@@ -40,6 +43,15 @@ if (isset($_GET['action']) && $_GET['action'] == 'createClient' && isset($_POST[
 
 }else if (isset($_GET['page'])&& $_GET['page']='listCompte'&&isset($_GET['action'])&& $_GET['action'] == 'modifier' && isset($_GET["id_compte"])){
     $compteController->modifyFromCompte($_GET["id_compte"]);
+
+}else  if (isset($_GET['page'])&& $_GET['page']='listContrat'&&isset($_GET['action'])&& $_GET['action'] == 'supprimer' && isset($_GET["id_contrat"])){
+    $contratController->deleteFromContrat($_GET["id_contrat"]);
+
+}else if (isset($_GET['page'])&& $_GET['page']='listContrat'&&isset($_GET['action'])&& $_GET['action'] == 'voir' && isset($_GET["id_contrat"])){
+    $contratController->viewFromContrat($_GET["id_contrat"]);
+
+}else if (isset($_GET['page'])&& $_GET['page']='listContrat'&&isset($_GET['action'])&& $_GET['action'] == 'modifier' && isset($_GET["id_contrat"])){
+    $contratController->modifyFromContrat($_GET["id_contrat"]);
 
 }else if(isset($_GET['cree']) && $_GET['cree'] == 'nouveau-client'){
     $clientController->newClient();
