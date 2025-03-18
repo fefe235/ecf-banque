@@ -15,8 +15,12 @@
         <input type="number" name="montant" required>
         <label for="duree" >durée mois :</label>
         <input type="number" name="duree" required>
-        <label for="id_client" >indentifiant client :</label>
-        <input type="number" name="id_client" required>
+        <label for="id_client" > client :</label>
+        <select name="id_client" required>
+        <?php foreach ($clients as $client) {  ?>
+            <option value="<?= $client['id_client'] ?>"><?= $client['nom'] . ' ' . $client['prenom'] ?></option>
+            <?php  } ?>
+        </select>
 
         <button type="submit">Ajouter</button>
     </form>

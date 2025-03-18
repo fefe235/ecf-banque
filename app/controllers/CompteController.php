@@ -12,6 +12,8 @@ class CompteController
     }
     public function newCompte() 
     {
+        $cli = new Client();
+        $clients = $cli->getAllClient();
         require_once __DIR__ . '/../views/nouveau-compte.php';
     }
 
@@ -32,6 +34,8 @@ class CompteController
     }
     public function modifyFromCompte($id) 
     {
+        $cli = new Client();
+        $clients = $cli->getAllClient();
         $compte = $this->compte->getCompte($id);
         require_once __DIR__ . '/../views/modify-compte.php';
     }

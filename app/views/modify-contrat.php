@@ -21,8 +21,12 @@
                 <input type="text" class="form-control" name="duree" value="<?= htmlspecialchars($contrat['duree_mois']) ?>" required>
             </div>
             <div class="mb-3">
-                <label for="title" class="form-label">client :</label>
-                <input type="text" class="form-control" name="id_client" value="<?= htmlspecialchars($contrat['id_client']) ?>" required>
+            <label for="id_client" > client :</label>
+            <select name="id_client" required>
+            <?php foreach ($clients as $client) {  ?>
+            <option value="<?= $client['id_client'] ?>"><?= $client['nom'] . ' ' . $client['prenom'] ?></option>
+            <?php  } ?>
+        </select>
             </div>
             <button type="submit" class="btn btn-success">Mettre à jour</button>
         </form>

@@ -5,11 +5,16 @@
     <form action="?action=createCompte" method="POST">
     <label for="RIB" >RIB :</label>
     <input type="text" name="RIB" required>
-    <label for="id_client" >identifiant client :</label>
-        <input type="number" name="id_client" required>
+
+    <label for="id_client" > client :</label>
+        <select name="id_client" required>
+        <?php foreach ($clients as $client) {  ?>
+            <option value="<?= $client['id_client'] ?>"><?= $client['nom'] . ' ' . $client['prenom'] ?></option>
+            <?php  } ?>
+        </select>
 
         <label for="type" >type de compte :</label>
-        <select name="type" id="" required>
+        <select name="type" required>
         <option value="courant">courant</option>
         <option value="epargne">epargne</option>
         </select>

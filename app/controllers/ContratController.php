@@ -12,6 +12,8 @@ class ContratController
     }
     public function newContrat() 
     {
+        $cli = new Client();
+        $clients = $cli->getAllClient();
         require_once __DIR__ . '/../views/nouveau-contrat.php';
     }
     public function listAllContrat() 
@@ -30,7 +32,9 @@ class ContratController
         require_once __DIR__ . '/../views/view-contrat.php';
     }
     public function modifyFromContrat($id) 
-    {
+    {   
+        $cli = new Client();
+        $clients = $cli->getAllClient();
         $contrat = $this->contrat->getContrat($id);
         require_once __DIR__ . '/../views/modify-contrat.php';
     }

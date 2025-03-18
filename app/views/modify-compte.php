@@ -18,12 +18,16 @@
                 <input type="text" class="form-control" name="solde" value="<?= htmlspecialchars($compte['solde']) ?>" required>
             </div>
             <div class="mb-3">
-                <label for="title" class="form-label">client :</label>
-                <input type="text" class="form-control" name="id_client" value="<?= htmlspecialchars($compte['id_client']) ?>" required>
+            <label for="id_client" > client :</label>
+            <select name="id_client" required>
+            <?php foreach ($clients as $client) {  ?>
+            <option value="<?= $client['id_client'] ?>"><?= $client['nom'] . ' ' . $client['prenom'] ?></option>
+            <?php  } ?>
+        </select>
             </div>
             <button type="submit" class="btn btn-success">Mettre à jour</button>
         </form>
-        <a href="?id_compte=<?= htmlspecialchars($client['id_compte']) ?>&action=voir&page=listCompte" class="btn btn-secondary mt-3">Annuler</a>
+        <a href="?id_compte=<?= htmlspecialchars($compte['id_compte']) ?>&action=voir&page=listCompte" class="btn btn-secondary mt-3">Annuler</a>
     </div>
 
 <?php require_once __DIR__ . '/templates/footer.php'; ?>
