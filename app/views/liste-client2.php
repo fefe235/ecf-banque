@@ -29,7 +29,7 @@
                         <a href="?id_client=<?= $client['id_client'] ?>&action=modifier&page=listClient" class="btn btn-secondary btn-sm">Modifier</a>
                         <a href="?id_client=<?= $client['id_client'] ?>&action=supprimer&page=listClient" 
                            class="btn btn-secondary btn-sm"
-                           onclick="return confirm('Êtes-vous sûr de vouloir supprimer ?')">
+                           onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')">
                             Supprimer
                         </a>
                     </td>

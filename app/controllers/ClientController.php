@@ -8,6 +8,7 @@ class ClientController
     
     public function __construct() 
     {
+
         $this->client = new Client();
     }
 
@@ -20,6 +21,7 @@ class ClientController
 
     public function listAllClient() 
     {
+        $err=true;
         $clients = $this->client->getAllClient();
         require_once __DIR__ . '/../views/liste-client.php';
     }
@@ -35,9 +37,16 @@ class ClientController
         require_once __DIR__ . '/../views/modify-client.php';
     }
     public function deleteFromClient($id) 
-    {
-        $this->client->deleteClient($id);
-        header('Location: /ecf-banque/');
+    {       
+            $errA= $this->client->errCompte($id);
+            $errB= $this->client->errContrat($id);
+            $err=$this->client->errCompte($id)||$this->client->errContrat($id);
+            if($err){
+                require_once __DIR__ . '/../views/err.php';
+            }else{
+                $this->client->deleteClient($id);
+                header('Location: /ecf-banque/');
+            }   
     }
     public function createClient(string $nom, string $prenom, string $email, string $tel, string $adresse)
     {

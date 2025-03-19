@@ -19,9 +19,33 @@ class Client
         return $stmt->fetchAll();
     }
     
+    public function errCompte($id){
+        $compte = new Compte() ;
+        $comptes = $compte->getAllCompte();
+        $bool = false;
     
+    foreach($comptes as $c){
+        if($c["id_client"] == $id){
+            $bool = true;
+            return $bool;
+        }
+    }
+    return $bool;
+}
+public function errContrat($id){
+    $contrat = new Contrat() ;
+    $contrats = $contrat->getAllContrat();
+    $bool = false;
+    
+    foreach($contrats as $c){
+        if($c["id_client"] == $id){
+            $bool = true;
+        }
+    }
+    return $bool;
+}
     public function deleteClient($id)
-    {
+    {   
         $sqlDelete = "DELETE FROM client WHERE id_client=:id";
         $stmt = $this->pdo->prepare($sqlDelete);
         $stmt->bindParam(':id', $id);

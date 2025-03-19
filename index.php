@@ -28,7 +28,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'createClient' && isset($_POST[
     $compteController->createCompte($_POST['RIB'], $_POST['type'], $_POST['solde'],$_POST['id_client']);
 
 }else if (isset($_GET['action']) && $_GET['action'] == 'createContrat' && isset($_POST['type_contrat']) && !empty($_POST['type_contrat']) && isset($_POST['montant']) && !empty($_POST['montant']) && isset($_POST['duree'])&& !empty($_POST['duree'])&& isset($_POST['id_client'])&& !empty($_POST['id_client']) ) {
-    $contrtatController->createContrat($_POST['type_contrat'], $_POST['montant'], $_POST['duree'],$_POST['id_client']);
+    $contratController->createContrat($_POST['type_contrat'], $_POST['montant'], $_POST['duree'],$_POST['id_client']);
 
 }else if (isset($_GET['page'])&& $_GET['page']='listClient'&&isset($_GET['action'])&& $_GET['action'] == 'supprimer' && isset($_GET["id_client"])){
     $clientController->deleteFromClient($_GET["id_client"]);
@@ -75,5 +75,5 @@ if (isset($_GET['action']) && $_GET['action'] == 'createClient' && isset($_POST[
     $contratController->listAllContrat();
 
 }else{
-    $clientController->listAllClient();
-}
+        $clientController->listAllClient();
+    }
