@@ -1,14 +1,10 @@
 <?php require_once __DIR__ . '/templates/header.php'; ?>
-<nav>
-    <a href="?nav=compte">voir les comptes</a>
-    <a href="?nav=contrat">voir les contrats</a>
-</nav>
 <?php if (!empty($clients)):  ?>
     <div class="container mt-5">
-    <h2 class="mb-4">📋 Liste des client</h2>
+    <h2 class="mb-4"> Liste des client</h2>
 
-    <table class="table table-striped table-bordered">
-        <thead class="table-dark">
+    <table class="table table-striped-column table-sm table-bordered">
+        <thead class="table-secondary">
             <tr>
                 <th>ID</th>
                 <th>Nom</th>
@@ -16,6 +12,7 @@
                 <th>Email</th>
                 <th>Téléphone</th>
                 <th>Adresse</th>
+                <th>options</th>
             </tr>
         </thead>
         <tbody>
@@ -28,10 +25,10 @@
                     <td><?= htmlspecialchars($client['telephone']) ?></td>
                     <td><?= htmlspecialchars($client['adresse']) ?></td>
                     <td>
-                        <a href="?id_client=<?= $client['id_client'] ?>&action=voir&page=listClient" class="btn btn-info btn-sm">Voir</a>
-                        <a href="?id_client=<?= $client['id_client'] ?>&action=modifier&page=listClient" class="btn btn-warning btn-sm">Modifier</a>
+                        <a href="?id_client=<?= $client['id_client'] ?>&action=voir&page=listClient" class="btn btn-secondary btn-sm">Voir</a>
+                        <a href="?id_client=<?= $client['id_client'] ?>&action=modifier&page=listClient" class="btn btn-secondary btn-sm">Modifier</a>
                         <a href="?id_client=<?= $client['id_client'] ?>&action=supprimer&page=listClient" 
-                           class="btn btn-danger btn-sm"
+                           class="btn btn-secondary btn-sm"
                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette tâche ?')">
                             Supprimer
                         </a>

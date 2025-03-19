@@ -1,5 +1,5 @@
 <?php require_once __DIR__ . '/templates/header.php'; ?>
-<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+<div class="d-flex justify-content-center align-items-center vh-100 bg-secondary">
 
     <div class="card p-4 shadow-lg" style="width: 400px;">
         <h2 class="text-center">Connexion</h2>
@@ -22,7 +22,7 @@
                 <input type="password" id="password" name="password" class="form-control" required>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Se connecter</button>
+            <button type="submit" class="btn btn-info w-100">Se connecter</button>
         </form>
     </div>
 

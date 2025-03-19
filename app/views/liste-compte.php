@@ -1,20 +1,17 @@
 <?php require_once __DIR__ . '/templates/header.php'; ?>
-<nav>
-    <a href="?">voir les clients</a>
-    <a href="?nav=contrat">voir les contrats</a>
-</nav>
 <?php if (!empty($comptes)):  ?>
     <div class="container mt-5">
     <h2 class="mb-4">📋 Liste des comptes</h2>
 
-    <table class="table table-striped table-bordered">
-        <thead class="table-dark">
+    <table class="table table-striped-column table-sm table-bordered">
+        <thead class="table-secondary">
             <tr>
                 <th>ID</th>
                 <th>RIB</th>
                 <th>Type compte</th>
                 <th>solde</th>
                 <th>client</th>
+                <th>options</th>
             </tr>
         </thead>
         <tbody>
@@ -26,10 +23,10 @@
                     <td><?= htmlspecialchars($compte['solde']) ?></td>
                     <td><?= htmlspecialchars($compte['id_client']) ?></td>
                     <td>
-                        <a href="?id_compte=<?= $compte['id_compte'] ?>&action=voir&page=listCompte" class="btn btn-info btn-sm">Voir</a>
-                        <a href="?id_compte=<?= $compte['id_compte'] ?>&action=modifier&page=listCompte" class="btn btn-warning btn-sm">Modifier</a>
+                        <a href="?id_compte=<?= $compte['id_compte'] ?>&action=voir&page=listCompte" class="btn btn-secondary btn-sm">Voir</a>
+                        <a href="?id_compte=<?= $compte['id_compte'] ?>&action=modifier&page=listCompte" class="btn btn-secondary btn-sm">Modifier</a>
                         <a href="?id_compte=<?= $compte['id_compte'] ?>&action=supprimer&page=listCompte" 
-                           class="btn btn-danger btn-sm"
+                           class="btn btn-secondary btn-sm"
                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette tâche ?')">
                             Supprimer
                         </a>
