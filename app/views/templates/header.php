@@ -19,13 +19,13 @@
                         <a class="nav-link" href="?">🏠 Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?cree=nouveau-client">➕ Nouvelle client</a>
+                        <a class="nav-link" href="?cree=nouveau-client">➕ Nouveau client</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?cree=nouveau-compte">➕ Nouvelle compte</a>
+                        <a class="nav-link" href="?cree=nouveau-compte">➕ Nouveau compte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?cree=nouveau-contrat">➕ Nouvelle contrat</a>
+                        <a class="nav-link" href="?cree=nouveau-contrat">➕ Nouveau contrat</a>
                     </li>
                 </ul>
             </div>

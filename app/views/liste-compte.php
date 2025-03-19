@@ -1,8 +1,11 @@
 <?php require_once __DIR__ . '/templates/header.php'; ?>
-
+<nav>
+    <a href="?">voir les clients</a>
+    <a href="?nav=contrat">voir les contrats</a>
+</nav>
 <?php if (!empty($comptes)):  ?>
     <div class="container mt-5">
-    <h2 class="mb-4">📋 Liste des client</h2>
+    <h2 class="mb-4">📋 Liste des comptes</h2>
 
     <table class="table table-striped table-bordered">
         <thead class="table-dark">

@@ -1,5 +1,4 @@
 <?php require_once __DIR__ . '/templates/header.php'; ?>
-
 <div class="container mt-5">
     <h2>nouveau client</h2>
     <form action="?action=createClient" method="POST">

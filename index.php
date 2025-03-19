@@ -69,8 +69,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'createClient' && isset($_POST[
     $adminController->connect($_POST['username'], $_POST['password']);
 } else if (isset($_GET['action']) && $_GET['action'] === 'disconnect') {
     $adminController->disconnect();
-}else {
-    $clientController->listAllClient();
+}else if(isset($_GET['nav']) && $_GET['nav'] === 'compte'){
     $compteController->listAllCompte();
+}else if(isset($_GET['nav']) && $_GET['nav'] === 'contrat'){
     $contratController->listAllContrat();
+
+}else{
+    $clientController->listAllClient();
 }
