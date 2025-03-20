@@ -1,5 +1,5 @@
 <?php
-
+require_once  __DIR__."/../model/Admin.php";
 class AdminController 
 {
     public function index() 
@@ -8,13 +8,10 @@ class AdminController
     }
 
     public function connect($username, $password)
-    {
-        $adminCredentials = [
-            'username' => 'administrateur',
-            'password' => hash('sha256', '1234')
-        ];
-
-        if ($username == $adminCredentials['username'] && hash('sha256', $password) == hash('sha256', '1234')) {
+    {   
+        $admin = new Admin();
+        $hash = $admin->getHash();
+        if (password_verify($password, $hash[0]['mot_de_passe'])) {
             $_SESSION['username'] = $username;
             $_SESSION['message_flash'] = 'La connexion est un succès';
             header('Location: index.php');

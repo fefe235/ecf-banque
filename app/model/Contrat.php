@@ -12,7 +12,7 @@ class Contrat
     }
     public function getAllContrat()
     {
-        $sql = "SELECT * FROM CONTRAT";
+        $sql = "SELECT CLIENT.nom,CLIENT.prenom,CONTRAT.* FROM CONTRAT JOIN CLIENT ON CLIENT.id_client =CONTRAT.id_client;";
         $stmt = $this->pdo->query($sql);
         
         return $stmt->fetchAll();

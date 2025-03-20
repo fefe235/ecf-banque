@@ -13,7 +13,7 @@ class Compte
 
     public function getAllCompte()
     {
-        $sql = "SELECT * FROM COMPTE_BANCAIRE";
+        $sql = "SELECT CLIENT.nom,CLIENT.prenom,COMPTE_BANCAIRE.* FROM COMPTE_BANCAIRE JOIN CLIENT ON CLIENT.id_client = COMPTE_BANCAIRE.id_client;";
         $stmt = $this->pdo->query($sql);
         
         return $stmt->fetchAll();

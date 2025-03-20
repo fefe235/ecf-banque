@@ -25,7 +25,7 @@ class CompteController
     public function createCompte(string $RIB, string $type, string $solde,$id_client)
     {
         $this->compte->createCompte($RIB, $type, $solde , $id_client);
-        header('Location: /ecf-banque/');
+        header('Location: /ecf-banque/?nav=compte');
     }
     public function viewFromCompte($id) 
     {
@@ -42,11 +42,11 @@ class CompteController
     public function deleteFromCompte($id) 
     {
         $this->compte->deleteCompte($id);
-        header('Location: /ecf-banque/');
+        header('Location: /ecf-banque/?nav=compte');
     }
     public function updateFromCompte($id, string $RIB, string $type, $solde, $id_client) 
     {
         $this->compte->updateCompte($id, $RIB, $type, $solde,$id_client);
-        header('Location: /ecf-banque/');
+        header('Location: /ecf-banque/?nav=compte');
     }
 }

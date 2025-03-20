@@ -1,12 +1,14 @@
 <?php require_once __DIR__ . '/templates/header.php'; ?>
 <?php if (!empty($comptes)):  ?>
     <div class="container mt-5">
-    <h2 class="mb-4">📋 Liste des comptes</h2>
+    <h2 class="mb-4"> Liste des comptes</h2>
 
     <table class="table table-striped-column table-sm table-bordered">
         <thead class="table-secondary">
             <tr>
                 <th>ID</th>
+                <th>nom</th>
+                <th>prenom</th>
                 <th>RIB</th>
                 <th>Type compte</th>
                 <th>solde</th>
@@ -18,6 +20,8 @@
             <?php foreach ($comptes as $compte): ?>
                 <tr>
                     <td><?= htmlspecialchars($compte['id_compte']) ?></td>
+                    <td><?= htmlspecialchars($compte['nom']) ?></td>
+                    <td><?= htmlspecialchars($compte['prenom']) ?></td>
                     <td><?= htmlspecialchars($compte['RIB']) ?></td>
                     <td><?= htmlspecialchars($compte['type_compte']) ?></td>
                     <td><?= htmlspecialchars($compte['solde']) ?></td>

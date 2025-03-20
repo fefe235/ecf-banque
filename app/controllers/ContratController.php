@@ -24,7 +24,7 @@ class ContratController
     public function createContrat(string $type_contrat, string $montant, string $duree,$id_client)
     {
         $this->contrat->createContrat($type_contrat, $montant, $duree , $id_client);
-        header('Location: /ecf-banque/');
+        header('Location: /ecf-banque/?nav=contrat');
     }
     public function viewFromContrat($id) 
     {
@@ -41,11 +41,11 @@ class ContratController
     public function deleteFromContrat($id) 
     {
         $this->contrat->deleteContrat($id);
-        header('Location: /ecf-banque/');
+        header('Location: /ecf-banque/?nav=contrat');
     }
     public function updateFromContrat($id, string $type, $montant, $duree, $id_client) 
     {
         $this->contrat->updateContrat($id, $type, $montant, $duree,$id_client);
-        header('Location: /ecf-banque/');
+        header('Location: /ecf-banque/?nav=contrat');
     }
 }

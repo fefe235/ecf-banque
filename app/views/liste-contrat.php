@@ -1,12 +1,14 @@
 <?php require_once __DIR__ . '/templates/header.php'; ?>
 <?php if (!empty($contrats)):  ?>
     <div class="container mt-5">
-    <h2 class="mb-4">📋 Liste des contrat</h2>
+    <h2 class="mb-4"> Liste des contrat</h2>
 
     <table class="table table-striped-column table-sm table-bordered">
         <thead class="table-secondary">
             <tr>
                 <th>ID</th>
+                <th>nom</th>
+                <th>prenom</th>
                 <th>type contrat</th>
                 <th>montant souscrit</th>
                 <th>durée mois</th>
@@ -18,6 +20,8 @@
             <?php foreach ($contrats as $contrat): ?>
                 <tr>
                     <td><?= htmlspecialchars($contrat['id_contrat']) ?></td>
+                    <td><?= htmlspecialchars($contrat['nom']) ?></td>
+                    <td><?= htmlspecialchars($contrat['prenom']) ?></td>
                     <td><?= htmlspecialchars($contrat['type_contrat']) ?></td>
                     <td><?= htmlspecialchars($contrat['montant_souscrit']) ?></td>
                     <td><?= htmlspecialchars($contrat['duree_mois']) ?></td>

@@ -74,6 +74,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'createClient' && isset($_POST[
 }else if(isset($_GET['nav']) && $_GET['nav'] === 'contrat'){
     $contratController->listAllContrat();
 
+
 }else{
+    // echo password_hash('1234', PASSWORD_DEFAULT)."<br>";
+    // $hash = "$2y$10$.BMe35F8luqrGWuBUobTOuLvishqXxMyc7t7BfAgSBQW6QN4jkEP2";
+    // echo password_verify("1234", $hash);
         $clientController->listAllClient();
     }
