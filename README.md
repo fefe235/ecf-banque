@@ -25,4 +25,4 @@
 
  ### fonctionnalité
 
-  application web sécurisée, permettant à un administrateur unique de gérer ces données via une interface ergonomique et fluide. L’application garantie la sécurité des données.
+  application web sécurisée, permettant à un administrateur unique de gérer ces données via une interface ergonomique et fluide. L’application garantie la sécurité des données grace a un mot de passe (le hash est deja stocké dans la base de donnee)
