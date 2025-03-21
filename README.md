@@ -1,17 +1,17 @@
 # ecf-banque
 
 ### dictionaire de données
-<img src="/img/admin.png" alt="administrateur" width="300" height="200">
-<img src="/img/client.png" alt="client" width="300" height="200">
-<img src="/img/compte.png" alt="compte_bancaire" width="300" height="200">
-<img src="/img/contrat.png" alt="contrat" width="300" height="200">
+<img src="/img/admin.png" alt="administrateur" >
+<img src="/img/client.png" alt="client">
+<img src="/img/compte.png" alt="compte_bancaire">
+<img src="/img/contrat.png" alt="contrat">
 
 ### mcd
-<img src="/img/mcd.png" alt="mcd" width="300" height="200">
+<img src="/img/mcd.png" alt="mcd" >
 
 ### mld
 
-<img src="/img/mld.png" alt="mld" width="300" height="200">
+<img src="/img/mld.png" alt="mld">
 
 ### accès
 
