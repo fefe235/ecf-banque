@@ -10,6 +10,8 @@ class Contrat
     {
         $this->pdo = getConnexion();
     }
+
+    // recupère tout les contrats depuis la base de donnee
     public function getAllContrat()
     {
         $sql = "SELECT CLIENT.nom,CLIENT.prenom,CONTRAT.* FROM CONTRAT JOIN CLIENT ON CLIENT.id_client =CONTRAT.id_client;";
@@ -17,6 +19,8 @@ class Contrat
         
         return $stmt->fetchAll();
     }
+
+    //cree un nouveau contrat dans la base de donne
     public function createContrat(string $type_contrat, string $montant, string $duree,$id_client)
     {
         $stmt = $this->pdo->prepare("INSERT INTO CONTRAT (type_contrat,montant_souscrit, duree_mois,id_client) VALUES (:type_contrat,:montant, :duree,:id_client)");
@@ -27,6 +31,8 @@ class Contrat
         
         return $stmt->execute();
     }
+
+    //suprimme un contrat dans la base de donne
     public function deleteContrat($id)
     {
         $sqlDelete = "DELETE FROM CONTRAT WHERE id_contrat=:id";
@@ -34,6 +40,8 @@ class Contrat
         $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
+
+    //permet de voir un contrat dans le detail depuis la base de donne
     public function getContrat($id) 
     {
         $stmt = $this->pdo->prepare("SELECT * FROM CONTRAT WHERE id_contrat=:id");
@@ -42,6 +50,8 @@ class Contrat
 
         return $stmt->fetch();
     }
+
+    //permet de modifier un contrat dans la base de donne
     public function updateContrat($id, string $type,$montant, $duree,$id_client) 
     {
         $stmt = $this->pdo->prepare("UPDATE CONTRAT SET type_contrat=:type ,montant_souscrit=:montant, duree_mois=:duree, id_client=:id_client 

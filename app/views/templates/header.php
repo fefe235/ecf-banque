@@ -32,6 +32,9 @@
               <li><a class="dropdown-item" href="?cree=nouveau-contrat">Nouveau contrat</a></li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="?action=disconnect">deconnexion</a>
+          </li>
         </ul>
       </div>
     </div>

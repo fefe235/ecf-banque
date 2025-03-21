@@ -5,13 +5,14 @@ require_once __DIR__ . '/app/controllers/CompteController.php';
 require_once __DIR__ . '/app/controllers/ContratController.php';
 require_once __DIR__ . '/app/controllers/AdminController.php';
 
+//appel des controleurs
 $clientController = new ClientController();
 $compteController = new CompteController();
 $contratController = new ContratController();
 $adminController = new AdminController();
-if (!isset($_SESSION['username'])) {
-    $adminController->index();
-}
+
+
+//ROUTER 
 if (isset($_GET['action']) && $_GET['action'] == 'createClient' && isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['prenom']) && !empty($_POST['prenom']) && isset($_POST['email']) && !empty($_POST['email'])&& isset($_POST['tel']) && !empty($_POST['tel'])&& isset($_POST['adresse']) && !empty($_POST['adresse']) ) {
     $clientController->createClient($_POST['nom'], $_POST['prenom'], $_POST['email'],$_POST['tel'],$_POST['adresse']);
 
@@ -57,11 +58,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'createClient' && isset($_POST[
 }else if (isset($_GET['page'])&& $_GET['page']='listContrat'&&isset($_GET['action'])&& $_GET['action'] == 'modifier' && isset($_GET["id_contrat"])){
     $contratController->modifyFromContrat($_GET["id_contrat"]);
 
-}else if(isset($_GET['cree']) && $_GET['cree'] == 'nouveau-client'){
+}else if(isset($_SESSION['username'])&&isset($_GET['cree']) && $_GET['cree'] == 'nouveau-client'){
     $clientController->newClient();
-}else if(isset($_GET['cree']) && $_GET['cree'] == 'nouveau-contrat'){
+}else if(isset($_SESSION['username'])&&isset($_GET['cree']) && $_GET['cree'] == 'nouveau-contrat'){
     $contratController->newContrat();
-}else if(isset($_GET['cree']) && $_GET['cree'] == 'nouveau-compte'){
+}else if(isset($_SESSION['username'])&&isset($_GET['cree']) && $_GET['cree'] == 'nouveau-compte'){
     $compteController->newCompte();
 }else if (isset($_GET['page']) && $_GET['page'] === 'login') {
     $adminController->index();
@@ -69,12 +70,14 @@ if (isset($_GET['action']) && $_GET['action'] == 'createClient' && isset($_POST[
     $adminController->connect($_POST['username'], $_POST['password']);
 } else if (isset($_GET['action']) && $_GET['action'] === 'disconnect') {
     $adminController->disconnect();
-}else if(isset($_GET['nav']) && $_GET['nav'] === 'compte'){
+}else if(isset($_SESSION['username'])&&isset($_GET['nav']) && $_GET['nav'] === 'compte'){
     $compteController->listAllCompte();
-}else if(isset($_GET['nav']) && $_GET['nav'] === 'contrat'){
+}else if(isset($_SESSION['username'])&&isset($_GET['nav']) && $_GET['nav'] === 'contrat'){
     $contratController->listAllContrat();
 
 
-}else{
+}else if (isset($_SESSION['username'])){
         $clientController->listAllClient();
-    }
+}else{
+    $adminController->index();
+};
